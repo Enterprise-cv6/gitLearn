@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.excel_import_demo.mapper.ElbowMapper">
+  <resultMap id="BaseResultMap" type="com.example.excel_import_demo.entity.Elbow">
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="pipe_id" jdbcType="INTEGER" property="pipeId" />
+    <result column="eb_weld_id" jdbcType="INTEGER" property="ebWeldId" />
+    <result column="eb_absolute_distance" jdbcType="DECIMAL" property="ebAbsoluteDistance" />
+    <result column="eb_feature" jdbcType="VARCHAR" property="ebFeature" />
+    <result column="eb_name_nearest_rp" jdbcType="VARCHAR" property="ebNameNearestRp" />
+    <result column="eb_distance_nearest_rp" jdbcType="DECIMAL" property="ebDistanceNearestRp" />
+    <result column="eb_remarks" jdbcType="VARCHAR" property="ebRemarks" />
+    <result column="eb_is_hcas" jdbcType="TINYINT" property="ebIsHcas" />
+  </resultMap>
+  <insert id="insert" parameterType="com.example.excel_import_demo.entity.Elbow">
+    insert into elbow (id, pipe_id, eb_weld_id, 
+      eb_absolute_distance, eb_feature, eb_name_nearest_rp, 
+      eb_distance_nearest_rp, eb_remarks, eb_is_hcas
+      )
+    values (#{id,jdbcType=INTEGER}, #{pipeId,jdbcType=INTEGER}, #{ebWeldId,jdbcType=INTEGER}, 
+      #{ebAbsoluteDistance,jdbcType=DECIMAL}, #{ebFeature,jdbcType=VARCHAR}, #{ebNameNearestRp,jdbcType=VARCHAR}, 
+      #{ebDistanceNearestRp,jdbcType=DECIMAL}, #{ebRemarks,jdbcType=VARCHAR}, #{ebIsHcas,jdbcType=TINYINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.excel_import_demo.entity.Elbow">
+    insert into elbow
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="pipeId != null">
+        pipe_id,
+      </if>
+      <if test="ebWeldId != null">
+        eb_weld_id,
+      </if>
+      <if test="ebAbsoluteDistance != null">
+        eb_absolute_distance,
+      </if>
+      <if test="ebFeature != null">
+        eb_feature,
+      </if>
+      <if test="ebNameNearestRp != null">
+        eb_name_nearest_rp,
+      </if>
+      <if test="ebDistanceNearestRp != null">
+        eb_distance_nearest_rp,
+      </if>
+      <if test="ebRemarks != null">
+        eb_remarks,
+      </if>
+      <if test="ebIsHcas != null">
+        eb_is_hcas,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="pipeId != null">
+        #{pipeId,jdbcType=INTEGER},
+      </if>
+      <if test="ebWeldId != null">
+        #{ebWeldId,jdbcType=INTEGER},
+      </if>
+      <if test="ebAbsoluteDistance != null">
+        #{ebAbsoluteDistance,jdbcType=DECIMAL},
+      </if>
+      <if test="ebFeature != null">
+        #{ebFeature,jdbcType=VARCHAR},
+      </if>
+      <if test="ebNameNearestRp != null">
+        #{ebNameNearestRp,jdbcType=VARCHAR},
+      </if>
+      <if test="ebDistanceNearestRp != null">
+        #{ebDistanceNearestRp,jdbcType=DECIMAL},
+      </if>
+      <if test="ebRemarks != null">
+        #{ebRemarks,jdbcType=VARCHAR},
+      </if>
+      <if test="ebIsHcas != null">
+        #{ebIsHcas,jdbcType=TINYINT},
+      </if>
+    </trim>
+  </insert>
+</mapper>

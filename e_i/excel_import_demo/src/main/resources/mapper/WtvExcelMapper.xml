@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.excel_import_demo.mapper.WtvExcelMapper">
+    <resultMap id="BaseResultMap" type="com.example.excel_import_demo.entity.WallThickness">
+        <result column="id" property="id" jdbcType="INTEGER"/>
+        <result column="pipe_id" property="pipeId" jdbcType="INTEGER"/>
+        <result column="wtv_year" property="wtvYear" jdbcType="INTEGER"/>
+        <result column="wtv_weld_id" property="wid" jdbcType="INTEGER"/>
+        <result column="wtv_absolute_distance" property="distance" jdbcType="DECIMAL"/>
+        <result column="wtv_wall_thickness" property="wall_thickness" jdbcType="DECIMAL"/>
+        <result column="wtv_length" property="longs" jdbcType="DECIMAL"/>
+        <result column="wtv_rp_name" property="rpname" jdbcType="VARCHAR" />
+        <result column="wtv_rp_distance" property="rpdis" jdbcType="DECIMAL"/>
+    </resultMap>
+
+    <insert id="insert" parameterType="com.example.excel_import_demo.entity.WallThickness">
+        INSERT INTO wall_thickness_variation
+        (pipe_id, wtv_year, wtv_weld_id , wtv_absolute_distance ,wtv_wall_thickness ,wtv_length ,wtv_rp_name,wtv_rp_distance)
+        VALUES
+        (#{term.pipeId},#{term.wtvYear},#{term.wid},#{term.distance},#{term.wall_thickness},#{term.longs} ,#{term.rpname},#{term.rpdis})
+    </insert>
+
+</mapper>

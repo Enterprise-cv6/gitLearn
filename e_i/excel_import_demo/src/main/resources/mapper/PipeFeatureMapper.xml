@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.excel_import_demo.mapper.PipeFeatureMapper">
+  <resultMap id="BaseResultMap" type="com.example.excel_import_demo.entity.PipeFeature">
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="pipe_id" jdbcType="INTEGER" property="pipeId" />
+    <result column="pf_absolute_distance" jdbcType="DECIMAL" property="pfAbsoluteDistance" />
+    <result column="pf_weld_distance" jdbcType="DECIMAL" property="pfWeldDistance" />
+    <result column="pf_pipejoint_length" jdbcType="DECIMAL" property="pfPipejointLength" />
+    <result column="pf_feature_type" jdbcType="VARCHAR" property="pfFeatureType" />
+    <result column="pf_feature_identify" jdbcType="VARCHAR" property="pfFeatureIdentify" />
+    <result column="pf_category" jdbcType="VARCHAR" property="pfCategory" />
+    <result column="pf_ orientation" jdbcType="VARCHAR" property="pfOrientation" />
+    <result column="pf_wall_thickness" jdbcType="DECIMAL" property="pfWallThickness" />
+    <result column="pf_length" jdbcType="DECIMAL" property="pfLength" />
+    <result column="pf_wide" jdbcType="DECIMAL" property="pfWide" />
+    <result column="pf_deep" jdbcType="DECIMAL" property="pfDeep" />
+    <result column="pf_in _out" jdbcType="VARCHAR" property="pfInOut" />
+    <result column="pf_remarks" jdbcType="VARCHAR" property="pfRemarks" />
+    <result column="pf_is_hcas" jdbcType="TINYINT" property="pfIsHcas" />
+    <result column="pf_year" jdbcType="DATE" property="pfYear" />
+  </resultMap>
+  <insert id="insert" parameterType="com.example.excel_import_demo.entity.PipeFeature">
+    insert into pipe_feature (id, pipe_id, pf_absolute_distance,
+      pf_weld_distance, pf_pipejoint_length, pf_feature_type,
+      pf_feature_identify, pf_category, pf_orientation,
+      pf_wall_thickness, pf_length, pf_wide,
+      pf_deep, pf_in_out, pf_remarks,
+      pf_is_hcas, pf_year)
+    values (#{id,jdbcType=INTEGER}, #{pipeId,jdbcType=INTEGER}, #{pfAbsoluteDistance,jdbcType=DECIMAL},
+      #{pfWeldDistance,jdbcType=DECIMAL}, #{pfPipejointLength,jdbcType=DECIMAL}, #{pfFeatureType,jdbcType=VARCHAR},
+      #{pfFeatureIdentify,jdbcType=VARCHAR}, #{pfCategory,jdbcType=VARCHAR}, #{pfOrientation,jdbcType=VARCHAR},
+      #{pfWallThickness,jdbcType=DECIMAL}, #{pfLength,jdbcType=DECIMAL}, #{pfWide,jdbcType=DECIMAL},
+      #{pfDeep,jdbcType=DECIMAL}, #{pfInOut,jdbcType=VARCHAR}, #{pfRemarks,jdbcType=VARCHAR},
+      #{pfIsHcas,jdbcType=TINYINT}, #{pfYear,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.excel_import_demo.entity.PipeFeature">
+    insert into pipe_feature
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="pipeId != null">
+        pipe_id,
+      </if>
+      <if test="pfAbsoluteDistance != null">
+        pf_absolute_distance,
+      </if>
+      <if test="pfWeldDistance != null">
+        pf_weld_distance,
+      </if>
+      <if test="pfPipejointLength != null">
+        pf_pipejoint_length,
+      </if>
+      <if test="pfFeatureType != null">
+        pf_feature_type,
+      </if>
+      <if test="pfFeatureIdentify != null">
+        pf_feature_identify,
+      </if>
+      <if test="pfCategory != null">
+        pf_category,
+      </if>
+      <if test="pfOrientation != null">
+        "pf_ orientation",
+      </if>
+      <if test="pfWallThickness != null">
+        pf_wall_thickness,
+      </if>
+      <if test="pfLength != null">
+        pf_length,
+      </if>
+      <if test="pfWide != null">
+        pf_wide,
+      </if>
+      <if test="pfDeep != null">
+        pf_deep,
+      </if>
+      <if test="pfInOut != null">
+        "pf_in _out",
+      </if>
+      <if test="pfRemarks != null">
+        pf_remarks,
+      </if>
+      <if test="pfIsHcas != null">
+        pf_is_hcas,
+      </if>
+      <if test="pfYear != null">
+        pf_year,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="pipeId != null">
+        #{pipeId,jdbcType=INTEGER},
+      </if>
+      <if test="pfAbsoluteDistance != null">
+        #{pfAbsoluteDistance,jdbcType=DECIMAL},
+      </if>
+      <if test="pfWeldDistance != null">
+        #{pfWeldDistance,jdbcType=DECIMAL},
+      </if>
+      <if test="pfPipejointLength != null">
+        #{pfPipejointLength,jdbcType=DECIMAL},
+      </if>
+      <if test="pfFeatureType != null">
+        #{pfFeatureType,jdbcType=VARCHAR},
+      </if>
+      <if test="pfFeatureIdentify != null">
+        #{pfFeatureIdentify,jdbcType=VARCHAR},
+      </if>
+      <if test="pfCategory != null">
+        #{pfCategory,jdbcType=VARCHAR},
+      </if>
+      <if test="pfOrientation != null">
+        #{pfOrientation,jdbcType=VARCHAR},
+      </if>
+      <if test="pfWallThickness != null">
+        #{pfWallThickness,jdbcType=DECIMAL},
+      </if>
+      <if test="pfLength != null">
+        #{pfLength,jdbcType=DECIMAL},
+      </if>
+      <if test="pfWide != null">
+        #{pfWide,jdbcType=DECIMAL},
+      </if>
+      <if test="pfDeep != null">
+        #{pfDeep,jdbcType=DECIMAL},
+      </if>
+      <if test="pfInOut != null">
+        #{pfInOut,jdbcType=VARCHAR},
+      </if>
+      <if test="pfRemarks != null">
+        #{pfRemarks,jdbcType=VARCHAR},
+      </if>
+      <if test="pfIsHcas != null">
+        #{pfIsHcas,jdbcType=TINYINT},
+      </if>
+      <if test="pfYear != null">
+        #{pfYear,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+</mapper>

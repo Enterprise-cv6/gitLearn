@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.excel_import_demo.mapper.MetalIncreaseMapper">
+  <resultMap id="BaseResultMap" type="com.example.excel_import_demo.entity.MetalIncrease">
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="pipe_id" jdbcType="INTEGER" property="pipeId" />
+    <result column="mi_weld_id" jdbcType="INTEGER" property="miWeldId" />
+    <result column="mi_absolute_distance" jdbcType="DECIMAL" property="miAbsoluteDistance" />
+    <result column="mi_feature" jdbcType="VARCHAR" property="miFeature" />
+    <result column="mi_ orientation" jdbcType="VARCHAR" property="miOrientation" />
+    <result column="mi_weld_distance" jdbcType="DECIMAL" property="miWeldDistance" />
+    <result column="mi_rp_name" jdbcType="VARCHAR" property="miRpName" />
+    <result column="mi_rp_distance" jdbcType="DECIMAL" property="miRpDistance" />
+    <result column="mi_remarks" jdbcType="VARCHAR" property="miRemarks" />
+    <result column="mi_year" jdbcType="INTEGER" property="miYear" />
+    <result column="mi_backup1" jdbcType="VARCHAR" property="miBackup1" />
+    <result column="mi_backup2" jdbcType="VARCHAR" property="miBackup2" />
+  </resultMap>
+  <insert id="insert" parameterType="com.example.excel_import_demo.entity.MetalIncrease">
+    insert into metal_increase (id, pipe_id, mi_weld_id, 
+      mi_absolute_distance, mi_feature, mi_orientation,
+      mi_weld_distance, mi_rp_name, mi_rp_distance, 
+      mi_remarks, mi_year, mi_backup1,
+      mi_backup2)
+    values (#{id,jdbcType=INTEGER}, #{pipeId,jdbcType=INTEGER}, #{miWeldId,jdbcType=INTEGER}, 
+      #{miAbsoluteDistance,jdbcType=DECIMAL}, #{miFeature,jdbcType=VARCHAR}, #{miOrientation,jdbcType=VARCHAR}, 
+      #{miWeldDistance,jdbcType=DECIMAL}, #{miRpName,jdbcType=VARCHAR}, #{miRpDistance,jdbcType=DECIMAL}, 
+      #{miRemarks,jdbcType=VARCHAR}, #{miYear,jdbcType=INTEGER}, #{miBackup1,jdbcType=VARCHAR},
+      #{miBackup2,jdbcType=VARCHAR})
+  </insert>
+
+  <insert id="insertSelective" parameterType="com.example.excel_import_demo.entity.MetalIncrease">
+    insert into metal_increase
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="pipeId != null">
+        pipe_id,
+      </if>
+      <if test="miWeldId != null">
+        mi_weld_id,
+      </if>
+      <if test="miAbsoluteDistance != null">
+        mi_absolute_distance,
+      </if>
+      <if test="miFeature != null">
+        mi_feature,
+      </if>
+      <if test="miOrientation != null">
+        "mi_ orientation",
+      </if>
+      <if test="miWeldDistance != null">
+        mi_weld_distance,
+      </if>
+      <if test="miRpName != null">
+        mi_rp_name,
+      </if>
+      <if test="miRpDistance != null">
+        mi_rp_distance,
+      </if>
+      <if test="miRemarks != null">
+        mi_remarks,
+      </if>
+      <if test="miYear != null">
+        mi_year,
+      </if>
+      <if test="miBackup1 != null">
+        mi_backup1,
+      </if>
+      <if test="miBackup2 != null">
+        mi_backup2,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="pipeId != null">
+        #{pipeId,jdbcType=INTEGER},
+      </if>
+      <if test="miWeldId != null">
+        #{miWeldId,jdbcType=INTEGER},
+      </if>
+      <if test="miAbsoluteDistance != null">
+        #{miAbsoluteDistance,jdbcType=DECIMAL},
+      </if>
+      <if test="miFeature != null">
+        #{miFeature,jdbcType=VARCHAR},
+      </if>
+      <if test="miOrientation != null">
+        #{miOrientation,jdbcType=VARCHAR},
+      </if>
+      <if test="miWeldDistance != null">
+        #{miWeldDistance,jdbcType=DECIMAL},
+      </if>
+      <if test="miRpName != null">
+        #{miRpName,jdbcType=VARCHAR},
+      </if>
+      <if test="miRpDistance != null">
+        #{miRpDistance,jdbcType=DECIMAL},
+      </if>
+      <if test="miRemarks != null">
+        #{miRemarks,jdbcType=VARCHAR},
+      </if>
+      <if test="year != null">
+        #{year,jdbcType=DATE},
+      </if>
+      <if test="miBackup1 != null">
+        #{miBackup1,jdbcType=VARCHAR},
+      </if>
+      <if test="miBackup2 != null">
+        #{miBackup2,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.excel_import_demo.mapper.MetalLossMapper">
+    <resultMap id="BaseResultMap" type="com.example.excel_import_demo.entity.MetalLoss">
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <result column="pipe_id" jdbcType="INTEGER" property="pipeId" />
+        <result column="ml_weld_id" jdbcType="INTEGER" property="mlWeldId" />
+        <result column="ml_absolute_distance" jdbcType="DECIMAL" property="mlAbsoluteDistance" />
+        <result column="ml_feature" jdbcType="VARCHAR" property="mlFeature" />
+        <result column="ml_length" jdbcType="DECIMAL" property="mlLength" />
+        <result column="ml_wide" jdbcType="DECIMAL" property="mlWidth" />
+        <result column="ml_deep" jdbcType="DECIMAL" property="mlDeep" />
+        <result column="ml_orientation" jdbcType="VARCHAR" property="mlOrientation" />
+        <result column="ml_in_out" jdbcType="VARCHAR" property="mlInOut" />
+        <result column="ml_wall_thickness" jdbcType="DECIMAL" property="mlWallThickness" />
+        <result column="ml_size" jdbcType="VARCHAR" property="mlSize" />
+        <result column="ml_weld_distance" jdbcType="DECIMAL" property="mlWeldDistance" />
+        <result column="ml_rp_name" jdbcType="VARCHAR" property="mlRpName" />
+        <result column="ml_rp_distance" jdbcType="DECIMAL" property="mlRpDistance" />
+        <result column="ml_remarks" jdbcType="VARCHAR" property="mlRemarks" />
+        <result column="ml_is_hcas" jdbcType="VARCHAR" property="isHcas" />
+        <result column="ml_year" jdbcType="INTEGER" property="mlYear" />
+    </resultMap>
+    <!--查询所有-->
+    <select id="findAll" resultType="com.example.excel_import_demo.entity.MetalLoss">
+        select * from metal_loss
+    </select>
+    <!--插入数据-->
+    <insert id="insert" parameterType="com.example.excel_import_demo.entity.MetalLoss">
+        insert into metal_loss (id, pipe_id,
+          ml_weld_id, ml_absolute_distance, ml_feature,
+          ml_length, ml_wide, ml_deep, ml_orientation, ml_in_out, ml_wall_thickness, ml_size, ml_weld_distance,
+          ml_rp_name, ml_rp_distance, ml_remarks, ml_is_hcas, ml_year)
+        values (#{id,jdbcType=INTEGER},
+         #{pipeId,jdbcType=INTEGER},
+         #{mlWeldId,jdbcType=INTEGER},
+          #{mlAbsoluteDistance,jdbcType=DECIMAL},
+          #{mlFeature,jdbcType=VARCHAR},
+          #{mlLength,jdbcType=DECIMAL},
+          #{mlWidth,jdbcType=DECIMAL},
+          #{mlDeep,jdbcType=DECIMAL},
+          #{mlOrientation,jdbcType=VARCHAR},
+          #{mlInOut,jdbcType=VARCHAR},
+          #{mlWallThickness,jdbcType=DECIMAL},
+          #{mlSize,jdbcType=VARCHAR},
+          #{mlWeldDistance,jdbcType=DECIMAL},
+          #{mlRpName,jdbcType=VARCHAR},
+          #{mlRpDistance,jdbcType=DECIMAL},
+          #{mlRemarks,jdbcType=VARCHAR},
+          #{isHcas,jdbcType=VARCHAR},
+      #{mlYear,jdbcType=INTEGER})
+  </insert>
+
+</mapper>

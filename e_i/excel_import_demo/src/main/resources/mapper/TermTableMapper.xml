@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.excel_import_demo.mapper.TermTableMapper">
+    <resultMap id="BaseResultMap" type="com.example.excel_import_demo.entity.TermTable">
+        <result column="tt_abbreviations" property="ttAbbreviations" jdbcType="VARCHAR"/>
+        <result column="tt_fullName" property="ttFullName" jdbcType="VARCHAR"/>
+        <result column="tt_chinese" property="ttChinese" jdbcType="VARCHAR"/>
+        <result column="tt_year" property="ttYear" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <insert id="insert" parameterType="com.example.excel_import_demo.entity.TermTable">
+        INSERT INTO term_table
+        (tt_abbreviations ,tt_fullName ,tt_chinese,tt_year)
+        VALUES
+        (#{ttAbbreviations},#{ttFullName},#{ttChinese},#{ttYear})
+    </insert>
+
+</mapper>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.excel_import_demo.mapper.AbnormalWeldPointMapper">
+  <resultMap id="BaseResultMap" type="com.example.excel_import_demo.entity.AbnormalWeldPoint">
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="pipe_id" jdbcType="INTEGER" property="pipeId" />
+    <result column="abw_weld_id" jdbcType="INTEGER" property="abwWeldId" />
+    <result column="abw_absolute_distance" jdbcType="DECIMAL" property="abwAbsoluteDistance" />
+    <result column="abw_feature" jdbcType="VARCHAR" property="abwFeature" />
+    <result column="abw_length" jdbcType="INTEGER" property="abwLength" />
+    <result column="abw_width" jdbcType="INTEGER" property="abwWidth" />
+    <result column="abw_orientation" jdbcType="VARCHAR" property="abwOrientation" />
+    <result column="abw_distance_upstream" jdbcType="DECIMAL" property="abwDistanceUpstream" />
+    <result column="abw_name_nearest_rp" jdbcType="VARCHAR" property="abwNameNearestRp" />
+    <result column="abw_distance_nearest_rp" jdbcType="DECIMAL" property="abwDistanceNearestRp" />
+    <result column="abw_remarks" jdbcType="VARCHAR" property="abwRemarks" />
+    <result column="abw_is_hcas" jdbcType="TINYINT" property="abwIsHcas" />
+  </resultMap>
+  <insert id="insert" parameterType="com.example.excel_import_demo.entity.AbnormalWeldPoint">
+    insert into abnormal_weld_point (id, pipe_id, abw_weld_id, 
+      abw_absolute_distance, abw_feature, abw_length, 
+      abw_width, abw_orientation, abw_distance_upstream,
+      abw_name_nearest_rp, abw_distance_nearest_rp, 
+      abw_remarks, abw_is_hcas)
+    values (#{id,jdbcType=INTEGER}, #{pipeId,jdbcType=INTEGER}, #{abwWeldId,jdbcType=INTEGER}, 
+      #{abwAbsoluteDistance,jdbcType=DECIMAL}, #{abwFeature,jdbcType=VARCHAR}, #{abwLength,jdbcType=INTEGER}, 
+      #{abwWidth,jdbcType=INTEGER}, #{abwOrientation,jdbcType=VARCHAR}, #{abwDistanceUpstream,jdbcType=DECIMAL},
+      #{abwNameNearestRp,jdbcType=VARCHAR}, #{abwDistanceNearestRp,jdbcType=DECIMAL}, 
+      #{abwRemarks,jdbcType=VARCHAR}, #{abwIsHcas,jdbcType=TINYINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.excel_import_demo.entity.AbnormalWeldPoint">
+    insert into abnormal_weld_point
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="pipeId != null">
+        pipe_id,
+      </if>
+      <if test="abwWeldId != null">
+        abw_weld_id,
+      </if>
+      <if test="abwAbsoluteDistance != null">
+        abw_absolute_distance,
+      </if>
+      <if test="abwFeature != null">
+        abw_feature,
+      </if>
+      <if test="abwLength != null">
+        abw_length,
+      </if>
+      <if test="abwWidth != null">
+        abw_width,
+      </if>
+      <if test="abwCircumference != null">
+        abw_circumference,
+      </if>
+      <if test="abwDistanceUpstream != null">
+        abw_distance_upstream,
+      </if>
+      <if test="abwNameNearestRp != null">
+        abw_name_nearest_rp,
+      </if>
+      <if test="abwDistanceNearestRp != null">
+        abw_distance_nearest_rp,
+      </if>
+      <if test="abwRemarks != null">
+        abw_remarks,
+      </if>
+      <if test="abwIsHcas != null">
+        abw_is_hcas,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="pipeId != null">
+        #{pipeId,jdbcType=INTEGER},
+      </if>
+      <if test="abwWeldId != null">
+        #{abwWeldId,jdbcType=INTEGER},
+      </if>
+      <if test="abwAbsoluteDistance != null">
+        #{abwAbsoluteDistance,jdbcType=DECIMAL},
+      </if>
+      <if test="abwFeature != null">
+        #{abwFeature,jdbcType=VARCHAR},
+      </if>
+      <if test="abwLength != null">
+        #{abwLength,jdbcType=INTEGER},
+      </if>
+      <if test="abwWidth != null">
+        #{abwWidth,jdbcType=INTEGER},
+      </if>
+      <if test="abwCircumference != null">
+        #{abwCircumference,jdbcType=VARCHAR},
+      </if>
+      <if test="abwDistanceUpstream != null">
+        #{abwDistanceUpstream,jdbcType=DECIMAL},
+      </if>
+      <if test="abwNameNearestRp != null">
+        #{abwNameNearestRp,jdbcType=VARCHAR},
+      </if>
+      <if test="abwDistanceNearestRp != null">
+        #{abwDistanceNearestRp,jdbcType=DECIMAL},
+      </if>
+      <if test="abwRemarks != null">
+        #{abwRemarks,jdbcType=VARCHAR},
+      </if>
+      <if test="abwIsHcas != null">
+        #{abwIsHcas,jdbcType=TINYINT},
+      </if>
+    </trim>
+  </insert>
+</mapper>

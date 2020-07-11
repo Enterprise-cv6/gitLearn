@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.excel_import_demo.mapper.ColdPipeMapper">
+  <resultMap id="BaseResultMap" type="com.example.excel_import_demo.entity.ColdPipe">
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="pipe_id" jdbcType="INTEGER" property="pipeId" />
+    <result column="cp_weld_id" jdbcType="INTEGER" property="cpWeldId" />
+    <result column="cp_absolute_distance" jdbcType="DECIMAL" property="cpAbsoluteDistance" />
+    <result column="cp_pipe_length" jdbcType="DECIMAL" property="cpPipeLength" />
+    <result column="cp_feature" jdbcType="VARCHAR" property="cpFeature" />
+    <result column="cp_weld_type" jdbcType="VARCHAR" property="cpWeldType" />
+    <result column="cp_ave_wall_thickness" jdbcType="DECIMAL" property="cpAveWallThickness" />
+    <result column="cp_upstream_intersection" jdbcType="VARCHAR" property="cpUpstreamIntersection" />
+    <result column="cp_downstream_intersection" jdbcType="VARCHAR" property="cpDownstreamIntersection" />
+    <result column="cp_name_nearest_rp" jdbcType="VARCHAR" property="cpNameNearestRp" />
+    <result column="cp_distance_nearest_rp" jdbcType="DECIMAL" property="cpDistanceNearestRp" />
+    <result column="cp_remarks" jdbcType="VARCHAR" property="cpRemarks" />
+  </resultMap>
+  <insert id="insert" parameterType="com.example.excel_import_demo.entity.ColdPipe">
+    insert into cold_pipe (id, pipe_id, cp_weld_id, 
+      cp_absolute_distance, cp_pipe_length, cp_feature, 
+      cp_weld_type, cp_ave_wall_thickness, cp_upstream_intersection, 
+      cp_downstream_intersection, cp_name_nearest_rp, 
+      cp_distance_nearest_rp, cp_remarks)
+    values (#{id,jdbcType=INTEGER}, #{pipeId,jdbcType=INTEGER}, #{cpWeldId,jdbcType=INTEGER}, 
+      #{cpAbsoluteDistance,jdbcType=DECIMAL}, #{cpPipeLength,jdbcType=DECIMAL}, #{cpFeature,jdbcType=VARCHAR}, 
+      #{cpWeldType,jdbcType=VARCHAR}, #{cpAveWallThickness,jdbcType=DECIMAL}, #{cpUpstreamIntersection,jdbcType=VARCHAR}, 
+      #{cpDownstreamIntersection,jdbcType=VARCHAR}, #{cpNameNearestRp,jdbcType=VARCHAR}, 
+      #{cpDistanceNearestRp,jdbcType=DECIMAL}, #{cpRemarks,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.excel_import_demo.entity.ColdPipe">
+    insert into cold_pipe
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="pipeId != null">
+        pipe_id,
+      </if>
+      <if test="cpWeldId != null">
+        cp_weld_id,
+      </if>
+      <if test="cpAbsoluteDistance != null">
+        cp_absolute_distance,
+      </if>
+      <if test="cpPipeLength != null">
+        cp_pipe_length,
+      </if>
+      <if test="cpFeature != null">
+        cp_feature,
+      </if>
+      <if test="cpWeldType != null">
+        cp_weld_type,
+      </if>
+      <if test="cpAveWallThickness != null">
+        cp_ave_wall_thickness,
+      </if>
+      <if test="cpUpstreamIntersection != null">
+        cp_upstream_intersection,
+      </if>
+      <if test="cpDownstreamIntersection != null">
+        cp_downstream_intersection,
+      </if>
+      <if test="cpNameNearestRp != null">
+        cp_name_nearest_rp,
+      </if>
+      <if test="cpDistanceNearestRp != null">
+        cp_distance_nearest_rp,
+      </if>
+      <if test="cpRemarks != null">
+        cp_remarks,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="pipeId != null">
+        #{pipeId,jdbcType=INTEGER},
+      </if>
+      <if test="cpWeldId != null">
+        #{cpWeldId,jdbcType=INTEGER},
+      </if>
+      <if test="cpAbsoluteDistance != null">
+        #{cpAbsoluteDistance,jdbcType=DECIMAL},
+      </if>
+      <if test="cpPipeLength != null">
+        #{cpPipeLength,jdbcType=DECIMAL},
+      </if>
+      <if test="cpFeature != null">
+        #{cpFeature,jdbcType=VARCHAR},
+      </if>
+      <if test="cpWeldType != null">
+        #{cpWeldType,jdbcType=VARCHAR},
+      </if>
+      <if test="cpAveWallThickness != null">
+        #{cpAveWallThickness,jdbcType=DECIMAL},
+      </if>
+      <if test="cpUpstreamIntersection != null">
+        #{cpUpstreamIntersection,jdbcType=VARCHAR},
+      </if>
+      <if test="cpDownstreamIntersection != null">
+        #{cpDownstreamIntersection,jdbcType=VARCHAR},
+      </if>
+      <if test="cpNameNearestRp != null">
+        #{cpNameNearestRp,jdbcType=VARCHAR},
+      </if>
+      <if test="cpDistanceNearestRp != null">
+        #{cpDistanceNearestRp,jdbcType=DECIMAL},
+      </if>
+      <if test="cpRemarks != null">
+        #{cpRemarks,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

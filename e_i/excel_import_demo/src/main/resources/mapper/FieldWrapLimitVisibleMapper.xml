@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.excel_import_demo.mapper.FieldWrapLimitVisibleMapper">
+    <resultMap id="BaseResultMap" type="com.example.excel_import_demo.entity.FieldWrapLimitVisible">
+        <result column="id" jdbcType="INTEGER" property="id" />
+        <result column="pipe_id" jdbcType="INTEGER" property="pipeId" />
+        <result column="fwlv_pipejoint_id" jdbcType="INTEGER" property="fwlvPipejointId" />
+        <result column="fwlv_absolute_distance" jdbcType="DECIMAL" property="fwlvAbsoluteDistance" />
+        <result column="fwlv_pipejoint_length" jdbcType="DECIMAL" property="fwlvPipejointLength" />
+        <result column="fwlv_pipejoint_type" jdbcType="VARCHAR" property="fwlvPipejointType" />
+        <result column="fwlv_wall_thickness" jdbcType="DECIMAL" property="fwlvWallThickness" />
+        <result column="fwlv_up_intersection" jdbcType="VARCHAR" property="fwlvUpIntersection" />
+        <result column="fwlv_down_intersection" jdbcType="VARCHAR" property="fwlvDownIntersection" />
+        <result column="fwlv_rp_name" jdbcType="VARCHAR" property="fwlvRpName" />
+        <result column="fwlv_rp_distance" jdbcType="DECIMAL" property="fwlvRpDistance" />
+        <result column="fwlv_remark" jdbcType="VARCHAR" property="fwlvRemark" />
+        <result column="fwlv_ml_depth" jdbcType="DECIMAL" property="fwlvMlDepth" />
+        <result column="fwlv_ml_orientation" jdbcType="VARCHAR" property="fwlvMlOrientation" />
+        <result column="fwlv_is_hcas" jdbcType="VARCHAR" property="fwlvIsHcas" />
+        <result column="fwlv_year" jdbcType="INTEGER" property="fwlvYear" />
+
+    </resultMap>
+
+    <insert id="insert" parameterType="com.example.excel_import_demo.entity.FieldWrapLimitVisible">
+        insert into field_wrap_limit_visible(id,pipe_id,fwlv_pipejoint_id,fwlv_absolute_distance,
+        fwlv_pipejoint_length,fwlv_pipejoint_type,fwlv_wall_thickness,fwlv_up_intersection,
+        fwlv_down_intersection,fwlv_rp_name,fwlv_rp_distance,fwlv_remark,fwlv_ml_depth,
+        fwlv_ml_orientation,fwlv_is_hcas,fwlv_year)
+        values (#{id,jdbcType=INTEGER}, #{pipeId,jdbcType=INTEGER}, #{fwlvPipejointId,jdbcType=INTEGER},
+      #{fwlvAbsoluteDistance,jdbcType=DECIMAL}, #{fwlvPipejointLength,jdbcType=DECIMAL}, #{fwlvPipejointType,jdbcType=VARCHAR},
+      #{fwlvWallThickness,jdbcType=DECIMAL}, #{fwlvUpIntersection,jdbcType=VARCHAR}, #{fwlvDownIntersection,jdbcType=VARCHAR},
+      #{fwlvRpName,jdbcType=VARCHAR}, #{fwlvRpDistance,jdbcType=DECIMAL},
+      #{fwlvRemark,jdbcType=VARCHAR}, #{fwlvMlDepth,jdbcType=DECIMAL},#{fwlvMlOrientation,jdbcType=VARCHAR},
+      #{fwlvIsHcas,jdbcType=VARCHAR},#{fwlvYear,jdbcType=INTEGER})
+    </insert>
+    <insert id="insertSelective" parameterType="com.example.excel_import_demo.entity.FieldWrapLimitVisible">
+        insert into field_wrap_limit_visible
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="pipeId != null">
+                pipe_id,
+            </if>
+            <if test="fwlvPipejointId != null">
+                fwlv_pipejoint_id,
+            </if>
+            <if test="fwlvAbsoluteDistance != null">
+                fwlv_absolute_distance,
+            </if>
+            <if test="fwlvPipejointLength != null">
+                fwlv_pipejoint_length,
+            </if>
+            <if test="fwlvPipejointType != null">
+                fwlv_pipejoint_type,
+            </if>
+            <if test="fwlvWallThickness != null">
+                fwlv_wall_thickness,
+            </if>
+            <if test="fwlvUpIntersection != null">
+                fwlv_up_intersection,
+            </if>
+            <if test="fwlvDownIntersection != null">
+                fwlv_down_intersection,
+            </if>
+            <if test="fwlvRpName != null">
+                fwlv_rp_name,
+            </if>
+            <if test="fwlvRpDistance != null">
+                fwlv_rp_distance,
+            </if>
+            <if test="fwlvRemark != null">
+                fwlv_remark,
+            </if>
+            <if test="fwlvMlDepth != null">
+                fwlv_ml_depth,
+            </if>
+            <if test="fwlvMlOrientation != null">
+                fwlv_ml_orientation,
+            </if>
+            <if test="fwlvIsHcas != null">
+                fwlv_is_hcas,
+            </if>
+            <if test="fwlvYear != null">
+                fwlv_year,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="pipeId != null">
+                #{pipeId,jdbcType=INTEGER},
+            </if>
+            <if test="fwlvPipejointId != null">
+                #{fwlvPipejointId,jdbcType=INTEGER},
+            </if>
+            <if test="fwlvAbsoluteDistance != null">
+                #{fwlvAbsoluteDistance,jdbcType=DECIMAL},
+            </if>
+            <if test="fwlvPipejointLength != null">
+                #{fwlvPipejointLength,jdbcType=DECIMAL},
+            </if>
+            <if test="fwlvPipejointType != null">
+                #{fwlvPipejointType,jdbcType=VARCHAR},
+            </if>
+            <if test="fwlvWallThickness != null">
+                #{fwlvWallThickness,jdbcType=DECIMAL},
+            </if>
+            <if test="fwlvUpIntersection != null">
+                #{fwlvUpIntersection,jdbcType=VARCHAR},
+            </if>
+            <if test="fwlvDownIntersection != null">
+                #{fwlvDownIntersection,jdbcType=VARCHAR},
+            </if>
+            <if test="fwlvRpName != null">
+                #{fwlvRpName,jdbcType=VARCHAR},
+            </if>
+            <if test="fwlvRpDistance != null">
+                #{fwlvRpDistance,jdbcType=DECIMAL},
+            </if>
+            <if test="fwlvRemark != null">
+                #{fwlvRemark,jdbcType=VARCHAR},
+            </if>
+            <if test="fwlvMlDepth != null">
+                #{fwlvMlDepth,jdbcType=DECIMAL},
+            </if>
+            <if test="fwlvMlOrientation != null">
+                #{fwlvMlOrientation,jdbcType=VARCHAR},
+            </if>
+            <if test="fwlvIsHcas != null">
+                #{fwlvIsHcas,jdbcType=VARCHAR},
+            </if>
+            <if test="fwlvYear != null">
+                #{fwlvYear,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
+</mapper>

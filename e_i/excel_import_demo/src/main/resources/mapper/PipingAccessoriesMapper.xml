@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.excel_import_demo.mapper.PipingAccessoriesMapper">
+  <resultMap id="BaseResultMap" type="com.example.excel_import_demo.entity.PipingAccessories">
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="pipe_id" jdbcType="INTEGER" property="pipeId" />
+    <result column="pa_weld_id" jdbcType="INTEGER" property="paWeldId" />
+    <result column="pa_absolute_distance" jdbcType="DECIMAL" property="paAbsoluteDistance" />
+    <result column="pa_feature" jdbcType="VARCHAR" property="paFeature" />
+    <result column="pa_weld_distance" jdbcType="DECIMAL" property="paWeldDistance" />
+    <result column="pa_rp_name" jdbcType="VARCHAR" property="paRpName" />
+    <result column="pa_rp_distance" jdbcType="DECIMAL" property="paRpDistance" />
+    <result column="pa_remarks" jdbcType="VARCHAR" property="paRemarks" />
+    <result column="pa_is_hcas" jdbcType="VARCHAR" property="paIsHcas" />
+    <result column="pa_year" jdbcType="DATE" property="paYear" />
+    <result column="pa_orientation" jdbcType="VARCHAR" property="paOrientation" />
+  </resultMap>
+  <insert id="insert" parameterType="com.example.excel_import_demo.entity.PipingAccessories">
+    insert into piping_accessories (id, pipe_id, pa_weld_id, 
+      pa_absolute_distance, pa_feature, pa_weld_distance, 
+      pa_rp_name, pa_rp_distance, pa_remarks, 
+      pa_is_hcas, pa_year,pa_orientation)
+    values (#{id,jdbcType=INTEGER}, #{pipeId,jdbcType=INTEGER}, #{paWeldId,jdbcType=INTEGER}, 
+      #{paAbsoluteDistance,jdbcType=DECIMAL}, #{paFeature,jdbcType=VARCHAR}, #{paWeldDistance,jdbcType=DECIMAL}, 
+      #{paRpName,jdbcType=VARCHAR}, #{paRpDistance,jdbcType=DECIMAL}, #{paRemarks,jdbcType=VARCHAR},
+      #{paIsHcas,jdbcType=VARCHAR}, #{paYear,jdbcType=DATE}, #{paOrientation,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.excel_import_demo.entity.PipingAccessories">
+    insert into piping_accessories
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="pipeId != null">
+        pipe_id,
+      </if>
+      <if test="paWeldId != null">
+        pa_weld_id,
+      </if>
+      <if test="paAbsoluteDistance != null">
+        pa_absolute_distance,
+      </if>
+      <if test="paFeature != null">
+        pa_feature,
+      </if>
+      <if test="paWeldDistance != null">
+        pa_weld_distance,
+      </if>
+      <if test="paRpName != null">
+        pa_rp_name,
+      </if>
+      <if test="paRpDistance != null">
+        pa_rp_distance,
+      </if>
+      <if test="paRemarks != null">
+        pa_remarks,
+      </if>
+      <if test="paIsHcas != null">
+        pa_is_hcas,
+      </if>
+      <if test="paYear != null">
+        pa_year,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="pipeId != null">
+        #{pipeId,jdbcType=INTEGER},
+      </if>
+      <if test="paWeldId != null">
+        #{paWeldId,jdbcType=INTEGER},
+      </if>
+      <if test="paAbsoluteDistance != null">
+        #{paAbsoluteDistance,jdbcType=DECIMAL},
+      </if>
+      <if test="paFeature != null">
+        #{paFeature,jdbcType=VARCHAR},
+      </if>
+      <if test="paWeldDistance != null">
+        #{paWeldDistance,jdbcType=DECIMAL},
+      </if>
+      <if test="paRpName != null">
+        #{paRpName,jdbcType=VARCHAR},
+      </if>
+      <if test="paRpDistance != null">
+        #{paRpDistance,jdbcType=DECIMAL},
+      </if>
+      <if test="paRemarks != null">
+        #{paRemarks,jdbcType=VARCHAR},
+      </if>
+      <if test="paIsHcas != null">
+        #{paIsHcas,jdbcType=TINYINT},
+      </if>
+      <if test="paYear != null">
+        #{paYear,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+</mapper>

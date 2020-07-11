@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.excel_import_demo.mapper.valveChamberTestMapper">
+    <insert id="insert" parameterType="com.example.excel_import_demo.entity.valveChamberTest">
+        INSERT INTO valve_chamber_test
+        (pipe_id, vct_valve_chamber_id,vct_longitude,vct_latitude,vct_upper_voff,
+         vct_down_voff,vct_pcm,vct_protect_terminal_voltage,vct_nonprotect_terminal_voltage,
+         vct_insulation_evaluation,vct_leak_electricity_evaluation,vct_ground_resistance,
+         vct_lightprotect_facilities_status,vct_leak_point_position,vct_leak_point_db,vct_repair_situation,
+         vct_detection_date,vct_remarks,vct_year,vct_backup1,vct_backup2)
+        VALUES
+        (
+        #{vtc.pipe_id},#{vtc.valve_chamber_id},#{vtc.longitude},#{vtc.latitude},#{vtc.upper_voff},
+        #{vtc.down_voff},#{vtc.pcm},#{vtc.protect_terminal_voltage},#{vtc.nonprotect_terminal_voltage},
+        #{vtc.insulation_evaluation},#{vtc.leak_electricity_evaluation},#{vtc.ground_resistance},
+        #{vtc.lightprotect_facilities_status},#{vtc.leak_point_position},#{vtc.leak_point_db},#{vtc.repair_situation},
+        #{vtc.detection_date},#{vtc.vct_remarks},#{vtc.year},#{vtc.backup1},#{vtc.backup2}
+        )
+
+    </insert>
+</mapper>

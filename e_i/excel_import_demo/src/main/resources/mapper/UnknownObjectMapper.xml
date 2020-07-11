@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.excel_import_demo.mapper.UnknownObjectMapper">
+  <resultMap id="BaseResultMap" type="com.example.excel_import_demo.entity.UnknownObject">
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="pipe_id" jdbcType="INTEGER" property="pipeId" />
+    <result column="uo_weld_id" jdbcType="INTEGER" property="uoWeldId" />
+    <result column="uo_absolute_distance" jdbcType="DECIMAL" property="uoAbsoluteDistance" />
+    <result column="uo_feature" jdbcType="VARCHAR" property="uoFeature" />
+    <result column="uo_ orientation" jdbcType="VARCHAR" property="uoOrientation" />
+    <result column="uo_weld_distance" jdbcType="DECIMAL" property="uoWeldDistance" />
+    <result column="uo_rp_name" jdbcType="VARCHAR" property="uoRpName" />
+    <result column="uo_rp_distance" jdbcType="DECIMAL" property="uoRpDistance" />
+    <result column="uo_remarks" jdbcType="VARCHAR" property="uoRemarks" />
+    <result column="uo_is_hcas" jdbcType="TINYINT" property="uoIsHcas" />
+    <result column="year" jdbcType="DATE" property="year" />
+    <result column="uo_backup1" jdbcType="VARCHAR" property="uoBackup1" />
+    <result column="uo_backup2" jdbcType="VARCHAR" property="uoBackup2" />
+  </resultMap>
+  <insert id="insert" parameterType="com.example.excel_import_demo.entity.UnknownObject">
+    insert into unknown_object ( pipe_id, uo_weld_id,
+      uo_absolute_distance, uo_feature, uo_orientation,
+      uo_weld_distance,uo_rp_name,uo_rp_distance,uo_remarks, uo_is_hcas, year
+      )
+    values (#{un.pipeId}, #{un.uoWeldId} ,
+      #{un.uoAbsoluteDistance}, #{un.uoFeature}, #{un.uoOrientation},
+      #{un.uoWeldDistance},#{un.uoRpName},#{un.uoRpDistance},
+
+      #{un.uoRemarks}, #{un.uoIsHcas}, #{un.year})
+
+  </insert>
+<!--  <insert id="insertSelective" parameterType="com.example.excel_import_demo.entity.UnknownObject">-->
+<!--    insert into unknown_object-->
+<!--    <trim prefix="(" suffix=")" suffixOverrides=",">-->
+<!--      <if test="id != null">-->
+<!--        id,-->
+<!--      </if>-->
+<!--      <if test="pipeId != null">-->
+<!--        pipe_id,-->
+<!--      </if>-->
+<!--      <if test="uoWeldId != null">-->
+<!--        uo_weld_id,-->
+<!--      </if>-->
+<!--      <if test="uoAbsoluteDistance != null">-->
+<!--        uo_absolute_distance,-->
+<!--      </if>-->
+<!--      <if test="uoFeature != null">-->
+<!--        uo_feature,-->
+<!--      </if>-->
+<!--      <if test="uoOrientation != null">-->
+<!--        "uo_ orientation",-->
+<!--      </if>-->
+<!--      <if test="uoWeldDistance != null">-->
+<!--        uo_weld_distance,-->
+<!--      </if>-->
+<!--      <if test="uoRpName != null">-->
+<!--        uo_rp_name,-->
+<!--      </if>-->
+<!--      <if test="uoRpDistance != null">-->
+<!--        uo_rp_distance,-->
+<!--      </if>-->
+<!--      <if test="uoRemarks != null">-->
+<!--        uo_remarks,-->
+<!--      </if>-->
+<!--      <if test="uoIsHcas != null">-->
+<!--        uo_is_hcas,-->
+<!--      </if>-->
+<!--      <if test="year != null">-->
+<!--        year,-->
+<!--      </if>-->
+<!--      <if test="uoBackup1 != null">-->
+<!--        uo_backup1,-->
+<!--      </if>-->
+<!--      <if test="uoBackup2 != null">-->
+<!--        uo_backup2,-->
+<!--      </if>-->
+<!--    </trim>-->
+<!--    <trim prefix="values (" suffix=")" suffixOverrides=",">-->
+<!--      <if test="id != null">-->
+<!--        #{id,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="pipeId != null">-->
+<!--        #{pipeId,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="uoWeldId != null">-->
+<!--        #{uoWeldId,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="uoAbsoluteDistance != null">-->
+<!--        #{uoAbsoluteDistance,jdbcType=DECIMAL},-->
+<!--      </if>-->
+<!--      <if test="uoFeature != null">-->
+<!--        #{uoFeature,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="uoOrientation != null">-->
+<!--        #{uoOrientation,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="uoWeldDistance != null">-->
+<!--        #{uoWeldDistance,jdbcType=DECIMAL},-->
+<!--      </if>-->
+<!--      <if test="uoRpName != null">-->
+<!--        #{uoRpName,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="uoRpDistance != null">-->
+<!--        #{uoRpDistance,jdbcType=DECIMAL},-->
+<!--      </if>-->
+<!--      <if test="uoRemarks != null">-->
+<!--        #{uoRemarks,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="uoIsHcas != null">-->
+<!--        #{uoIsHcas,jdbcType=TINYINT},-->
+<!--      </if>-->
+<!--      <if test="year != null">-->
+<!--        #{year,jdbcType=DATE},-->
+<!--      </if>-->
+<!--      <if test="uoBackup1 != null">-->
+<!--        #{uoBackup1,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="uoBackup2 != null">-->
+<!--        #{uoBackup2,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--    </trim>-->
+<!--  </insert>-->
+</mapper>

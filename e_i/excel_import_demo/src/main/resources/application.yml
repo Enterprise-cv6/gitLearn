@@ -1,0 +1,23 @@
+spring:
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 1000MB
+  datasource:
+    url: jdbc:mysql://121.196.9.185:3306/external?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    #url:  jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    #password: 123456
+    password: 028ns.com
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis:
+  # 指定全局配置文件位置
+  #config-location: classpath:mybatis/mybatis-config.xml
+  # 指定sql映射文件位置
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.example.excel_import_demo.entity
+
+
+
+
