@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo.mapper.SoilResistivityMapper" >
+  <resultMap id="BaseResultMap" type="com.example.demo.entity.SoilResistivity" >
+    <result column="id" property="id" jdbcType="INTEGER" />
+    <result column="pipe_id" property="pipeId" jdbcType="INTEGER" />
+    <result column="sr_test_station_id" property="srTestStationId" jdbcType="VARCHAR" />
+    <result column="sr_relative_position" property="srRelativePosition" jdbcType="VARCHAR" />
+    <result column="sr_longitude" property="srLongitude" jdbcType="VARCHAR" />
+    <result column="sr_latitude" property="srLatitude" jdbcType="VARCHAR" />
+    <result column="sr_soil_resistivity" property="srSoilResistivity" jdbcType="DECIMAL" />
+    <result column="sr_soil_corrosion_eval" property="srSoilCorrosionEval" jdbcType="VARCHAR" />
+    <result column="sr_detection_time" property="srDetectionTime" jdbcType="DATE" />
+    <result column="sr_remarks" property="srRemarks" jdbcType="VARCHAR" />
+    <result column="sr_year" property="srYear" jdbcType="INTEGER" />
+    <result column="sr_backup1" property="srBackup1" jdbcType="VARCHAR" />
+    <result column="sr_backup2" property="srBackup2" jdbcType="VARCHAR" />
+  </resultMap>
+  <insert id="insert" parameterType="com.example.demo.entity.SoilResistivity" >
+    insert into soil_resistivity (id, pipe_id, sr_test_station_id, 
+      sr_relative_position, sr_longitude, sr_latitude, 
+      sr_soil_resistivity, sr_soil_corrosion_eval, 
+      sr_detection_time, sr_remarks, sr_year, 
+      sr_backup1, sr_backup2)
+    values (#{id,jdbcType=INTEGER}, #{pipeId,jdbcType=INTEGER}, #{srTestStationId,jdbcType=VARCHAR}, 
+      #{srRelativePosition,jdbcType=VARCHAR}, #{srLongitude,jdbcType=VARCHAR}, #{srLatitude,jdbcType=VARCHAR}, 
+      #{srSoilResistivity,jdbcType=DECIMAL}, #{srSoilCorrosionEval,jdbcType=VARCHAR}, 
+      #{srDetectionTime,jdbcType=DATE}, #{srRemarks,jdbcType=VARCHAR}, #{srYear,jdbcType=INTEGER}, 
+      #{srBackup1,jdbcType=VARCHAR}, #{srBackup2,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.demo.entity.SoilResistivity" >
+    insert into soil_resistivity
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="pipeId != null" >
+        pipe_id,
+      </if>
+      <if test="srTestStationId != null" >
+        sr_test_station_id,
+      </if>
+      <if test="srRelativePosition != null" >
+        sr_relative_position,
+      </if>
+      <if test="srLongitude != null" >
+        sr_longitude,
+      </if>
+      <if test="srLatitude != null" >
+        sr_latitude,
+      </if>
+      <if test="srSoilResistivity != null" >
+        sr_soil_resistivity,
+      </if>
+      <if test="srSoilCorrosionEval != null" >
+        sr_soil_corrosion_eval,
+      </if>
+      <if test="srDetectionTime != null" >
+        sr_detection_time,
+      </if>
+      <if test="srRemarks != null" >
+        sr_remarks,
+      </if>
+      <if test="srYear != null" >
+        sr_year,
+      </if>
+      <if test="srBackup1 != null" >
+        sr_backup1,
+      </if>
+      <if test="srBackup2 != null" >
+        sr_backup2,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="pipeId != null" >
+        #{pipeId,jdbcType=INTEGER},
+      </if>
+      <if test="srTestStationId != null" >
+        #{srTestStationId,jdbcType=VARCHAR},
+      </if>
+      <if test="srRelativePosition != null" >
+        #{srRelativePosition,jdbcType=VARCHAR},
+      </if>
+      <if test="srLongitude != null" >
+        #{srLongitude,jdbcType=VARCHAR},
+      </if>
+      <if test="srLatitude != null" >
+        #{srLatitude,jdbcType=VARCHAR},
+      </if>
+      <if test="srSoilResistivity != null" >
+        #{srSoilResistivity,jdbcType=DECIMAL},
+      </if>
+      <if test="srSoilCorrosionEval != null" >
+        #{srSoilCorrosionEval,jdbcType=VARCHAR},
+      </if>
+      <if test="srDetectionTime != null" >
+        #{srDetectionTime,jdbcType=DATE},
+      </if>
+      <if test="srRemarks != null" >
+        #{srRemarks,jdbcType=VARCHAR},
+      </if>
+      <if test="srYear != null" >
+        #{srYear,jdbcType=INTEGER},
+      </if>
+      <if test="srBackup1 != null" >
+        #{srBackup1,jdbcType=VARCHAR},
+      </if>
+      <if test="srBackup2 != null" >
+        #{srBackup2,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

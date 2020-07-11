@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.pipelineSacrificialAnodeMapper">
+  <resultMap id="BaseResultMap" type="com.example.demo.entity.pipelineSacrificialAnode">
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="year" jdbcType="INTEGER" property="year" />
+    <result column="pipe_id" jdbcType="INTEGER" property="pipeId" />
+    <result column="psa_test_station_id" jdbcType="VARCHAR" property="psaTestStationId" />
+    <result column="psa_relative_position" jdbcType="VARCHAR" property="psaRelativePosition" />
+    <result column="psa_east_longtitude" jdbcType="VARCHAR" property="psaEastLongtitude" />
+    <result column="psa_north_latitude" jdbcType="VARCHAR" property="psaNorthLatitude" />
+    <result column="psa_sacrificial_currentout" jdbcType="DECIMAL" property="psaSacrificialCurrentout" />
+    <result column="psa_sacrificial_anode_grounding_potential" jdbcType="DECIMAL" property="psaSacrificialAnodeGroundingPotential" />
+    <result column="psa_sacrificial_anode_grounding_resistance" jdbcType="DECIMAL" property="psaSacrificialAnodeGroundingResistance" />
+    <result column="remarks" jdbcType="VARCHAR" property="remarks" />
+    <result column="backup1" jdbcType="VARCHAR" property="backup1" />
+    <result column="backup2" jdbcType="VARCHAR" property="backup2" />
+  </resultMap>
+  <insert id="insert" parameterType="com.example.demo.entity.pipelineSacrificialAnode">
+    insert into pipeline_sacrificial_anode (id, year, pipe_id, 
+      psa_test_station_id, psa_relative_position, 
+      psa_east_longtitude, psa_north_latitude, psa_sacrificial_currentout, 
+      psa_sacrificial_anode_grounding_potential, psa_sacrificial_anode_grounding_resistance, 
+      remarks, backup1, backup2
+      )
+    values (#{id,jdbcType=INTEGER}, #{year,jdbcType=INTEGER}, #{pipeId,jdbcType=INTEGER}, 
+      #{psaTestStationId,jdbcType=VARCHAR}, #{psaRelativePosition,jdbcType=VARCHAR}, 
+      #{psaEastLongtitude,jdbcType=VARCHAR}, #{psaNorthLatitude,jdbcType=VARCHAR}, #{psaSacrificialCurrentout,jdbcType=DECIMAL}, 
+      #{psaSacrificialAnodeGroundingPotential,jdbcType=DECIMAL}, #{psaSacrificialAnodeGroundingResistance,jdbcType=DECIMAL}, 
+      #{remarks,jdbcType=VARCHAR}, #{backup1,jdbcType=VARCHAR}, #{backup2,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.demo.entity.pipelineSacrificialAnode">
+    insert into pipeline_sacrificial_anode
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="year != null">
+        year,
+      </if>
+      <if test="pipeId != null">
+        pipe_id,
+      </if>
+      <if test="psaTestStationId != null">
+        psa_test_station_id,
+      </if>
+      <if test="psaRelativePosition != null">
+        psa_relative_position,
+      </if>
+      <if test="psaEastLongtitude != null">
+        psa_east_longtitude,
+      </if>
+      <if test="psaNorthLatitude != null">
+        psa_north_latitude,
+      </if>
+      <if test="psaSacrificialCurrentout != null">
+        psa_sacrificial_currentout,
+      </if>
+      <if test="psaSacrificialAnodeGroundingPotential != null">
+        psa_sacrificial_anode_grounding_potential,
+      </if>
+      <if test="psaSacrificialAnodeGroundingResistance != null">
+        psa_sacrificial_anode_grounding_resistance,
+      </if>
+      <if test="remarks != null">
+        remarks,
+      </if>
+      <if test="backup1 != null">
+        backup1,
+      </if>
+      <if test="backup2 != null">
+        backup2,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="year != null">
+        #{year,jdbcType=INTEGER},
+      </if>
+      <if test="pipeId != null">
+        #{pipeId,jdbcType=INTEGER},
+      </if>
+      <if test="psaTestStationId != null">
+        #{psaTestStationId,jdbcType=VARCHAR},
+      </if>
+      <if test="psaRelativePosition != null">
+        #{psaRelativePosition,jdbcType=VARCHAR},
+      </if>
+      <if test="psaEastLongtitude != null">
+        #{psaEastLongtitude,jdbcType=VARCHAR},
+      </if>
+      <if test="psaNorthLatitude != null">
+        #{psaNorthLatitude,jdbcType=VARCHAR},
+      </if>
+      <if test="psaSacrificialCurrentout != null">
+        #{psaSacrificialCurrentout,jdbcType=DECIMAL},
+      </if>
+      <if test="psaSacrificialAnodeGroundingPotential != null">
+        #{psaSacrificialAnodeGroundingPotential,jdbcType=DECIMAL},
+      </if>
+      <if test="psaSacrificialAnodeGroundingResistance != null">
+        #{psaSacrificialAnodeGroundingResistance,jdbcType=DECIMAL},
+      </if>
+      <if test="remarks != null">
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="backup1 != null">
+        #{backup1,jdbcType=VARCHAR},
+      </if>
+      <if test="backup2 != null">
+        #{backup2,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.example.demo.entity.pipelineSacrificialAnode">
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="year" jdbcType="INTEGER" property="year" />
+    <result column="pipe_id" jdbcType="INTEGER" property="pipeId" />
+    <result column="psa_test_station_id" jdbcType="VARCHAR" property="psaTestStationId" />
+    <result column="psa_relative_position" jdbcType="VARCHAR" property="psaRelativePosition" />
+    <result column="psa_east_longtitude" jdbcType="VARCHAR" property="psaEastLongtitude" />
+    <result column="psa_north_latitude" jdbcType="VARCHAR" property="psaNorthLatitude" />
+    <result column="psa_sacrificial_currentout" jdbcType="DECIMAL" property="psaSacrificialCurrentout" />
+    <result column="psa_sacrificial_anode_grounding_potential" jdbcType="DECIMAL" property="psaSacrificialAnodeGroundingPotential" />
+    <result column="psa_sacrificial_anode_grounding_resistance" jdbcType="DECIMAL" property="psaSacrificialAnodeGroundingResistance" />
+    <result column="remarks" jdbcType="VARCHAR" property="remarks" />
+    <result column="backup1" jdbcType="VARCHAR" property="backup1" />
+    <result column="backup2" jdbcType="VARCHAR" property="backup2" />
+  </resultMap>
+  <insert id="insert" parameterType="com.example.demo.entity.pipelineSacrificialAnode">
+    insert into pipeline_sacrificial_anode (id, year, pipe_id, 
+      psa_test_station_id, psa_relative_position, 
+      psa_east_longtitude, psa_north_latitude, psa_sacrificial_currentout, 
+      psa_sacrificial_anode_grounding_potential, psa_sacrificial_anode_grounding_resistance, 
+      remarks, backup1, backup2
+      )
+    values (#{id,jdbcType=INTEGER}, #{year,jdbcType=INTEGER}, #{pipeId,jdbcType=INTEGER}, 
+      #{psaTestStationId,jdbcType=VARCHAR}, #{psaRelativePosition,jdbcType=VARCHAR}, 
+      #{psaEastLongtitude,jdbcType=VARCHAR}, #{psaNorthLatitude,jdbcType=VARCHAR}, #{psaSacrificialCurrentout,jdbcType=DECIMAL}, 
+      #{psaSacrificialAnodeGroundingPotential,jdbcType=DECIMAL}, #{psaSacrificialAnodeGroundingResistance,jdbcType=DECIMAL}, 
+      #{remarks,jdbcType=VARCHAR}, #{backup1,jdbcType=VARCHAR}, #{backup2,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.demo.entity.pipelineSacrificialAnode">
+    insert into pipeline_sacrificial_anode
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="year != null">
+        year,
+      </if>
+      <if test="pipeId != null">
+        pipe_id,
+      </if>
+      <if test="psaTestStationId != null">
+        psa_test_station_id,
+      </if>
+      <if test="psaRelativePosition != null">
+        psa_relative_position,
+      </if>
+      <if test="psaEastLongtitude != null">
+        psa_east_longtitude,
+      </if>
+      <if test="psaNorthLatitude != null">
+        psa_north_latitude,
+      </if>
+      <if test="psaSacrificialCurrentout != null">
+        psa_sacrificial_currentout,
+      </if>
+      <if test="psaSacrificialAnodeGroundingPotential != null">
+        psa_sacrificial_anode_grounding_potential,
+      </if>
+      <if test="psaSacrificialAnodeGroundingResistance != null">
+        psa_sacrificial_anode_grounding_resistance,
+      </if>
+      <if test="remarks != null">
+        remarks,
+      </if>
+      <if test="backup1 != null">
+        backup1,
+      </if>
+      <if test="backup2 != null">
+        backup2,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="year != null">
+        #{year,jdbcType=INTEGER},
+      </if>
+      <if test="pipeId != null">
+        #{pipeId,jdbcType=INTEGER},
+      </if>
+      <if test="psaTestStationId != null">
+        #{psaTestStationId,jdbcType=VARCHAR},
+      </if>
+      <if test="psaRelativePosition != null">
+        #{psaRelativePosition,jdbcType=VARCHAR},
+      </if>
+      <if test="psaEastLongtitude != null">
+        #{psaEastLongtitude,jdbcType=VARCHAR},
+      </if>
+      <if test="psaNorthLatitude != null">
+        #{psaNorthLatitude,jdbcType=VARCHAR},
+      </if>
+      <if test="psaSacrificialCurrentout != null">
+        #{psaSacrificialCurrentout,jdbcType=DECIMAL},
+      </if>
+      <if test="psaSacrificialAnodeGroundingPotential != null">
+        #{psaSacrificialAnodeGroundingPotential,jdbcType=DECIMAL},
+      </if>
+      <if test="psaSacrificialAnodeGroundingResistance != null">
+        #{psaSacrificialAnodeGroundingResistance,jdbcType=DECIMAL},
+      </if>
+      <if test="remarks != null">
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="backup1 != null">
+        #{backup1,jdbcType=VARCHAR},
+      </if>
+      <if test="backup2 != null">
+        #{backup2,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

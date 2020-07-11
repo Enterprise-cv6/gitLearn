@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo.mapper.ExcavateTestAnticorrosionRepairMapper" >
+  <resultMap id="BaseResultMap" type="com.example.demo.entity.ExcavateTestAnticorrosionRepair" >
+    <result column="id" property="id" jdbcType="INTEGER" />
+    <result column="pipe_id" property="pipeId" jdbcType="INTEGER" />
+    <result column="etar_station" property="etarStation" jdbcType="VARCHAR" />
+    <result column="etar_defect_id" property="etarDefectId" jdbcType="VARCHAR" />
+    <result column="etar_relative_position" property="etarRelativePosition" jdbcType="VARCHAR" />
+    <result column="etar_longitude" property="etarLongitude" jdbcType="VARCHAR" />
+    <result column="etar_latitude" property="etarLatitude" jdbcType="VARCHAR" />
+    <result column="etar_pipe_top_buried_depth" property="etarPipeTopBuriedDepth" jdbcType="DECIMAL" />
+    <result column="etar_pcm_leak_detect" property="etarPcmLeakDetect" jdbcType="INTEGER" />
+    <result column="etar_soil_profile_description" property="etarSoilProfileDescription" jdbcType="VARCHAR" />
+    <result column="etar_soil_resistivity" property="etarSoilResistivity" jdbcType="DECIMAL" />
+    <result column="etar_soil_ph" property="etarSoilPh" jdbcType="DECIMAL" />
+    <result column="etar_groundwater_ph" property="etarGroundwaterPh" jdbcType="DECIMAL" />
+    <result column="etar_groundwater_cl" property="etarGroundwaterCl" jdbcType="DECIMAL" />
+    <result column="etar_groundwater_so4" property="etarGroundwaterSo4" jdbcType="DECIMAL" />
+    <result column="etar_groundwater_salt" property="etarGroundwaterSalt" jdbcType="DECIMAL" />
+    <result column="etar_soil_corrosion_evaluation" property="etarSoilCorrosionEvaluation" jdbcType="VARCHAR" />
+    <result column="etar_environment_ground_situation" property="etarEnvironmentGroundSituation" jdbcType="VARCHAR" />
+    <result column="etar_environment_soil__profile" property="etarEnvironmentSoilProfile" jdbcType="VARCHAR" />
+    <result column="etar_pe3_anticorrisive" property="etarPe3Anticorrisive" jdbcType="VARCHAR" />
+    <result column="etar_patch_heat_shrinkable_tape" property="etarPatchHeatShrinkableTape" jdbcType="VARCHAR" />
+    <result column="etar_elbow_fbe" property="etarElbowFbe" jdbcType="VARCHAR" />
+    <result column="etar_damaged_area" property="etarDamagedArea" jdbcType="VARCHAR" />
+    <result column="etar_thickness" property="etarThickness" jdbcType="DECIMAL" />
+    <result column="etar_spark_detection" property="etarSparkDetection" jdbcType="VARCHAR" />
+    <result column="etar_pe3_steel" property="etarPe3Steel" jdbcType="VARCHAR" />
+    <result column="etar_band_steel" property="etarBandSteel" jdbcType="VARCHAR" />
+    <result column="etar_band_pe" property="etarBandPe" jdbcType="VARCHAR" />
+    <result column="etar_band_fbe" property="etarBandFbe" jdbcType="VARCHAR" />
+    <result column="etar_fbe_cohesive_force" property="etarFbeCohesiveForce" jdbcType="VARCHAR" />
+    <result column="etar_anticorrosive_damaged_pictures" property="etarAnticorrosiveDamagedPictures" jdbcType="VARCHAR" />
+    <result column="etar_pipe_corrosion_status_description" property="etarPipeCorrosionStatusDescription" jdbcType="VARCHAR" />
+    <result column="etar_corrosion_type" property="etarCorrosionType" jdbcType="VARCHAR" />
+    <result column="etar_corrosion_area" property="etarCorrosionArea" jdbcType="VARCHAR" />
+    <result column="etar_corrosion_depth" property="etarCorrosionDepth" jdbcType="VARCHAR" />
+    <result column="etar_corrosion_rate" property="etarCorrosionRate" jdbcType="VARCHAR" />
+    <result column="etar_pipe_soil_potential_dc" property="etarPipeSoilPotentialDc" jdbcType="DECIMAL" />
+    <result column="etar_pipe_soil_potential_ac" property="etarPipeSoilPotentialAc" jdbcType="DECIMAL" />
+    <result column="etar_pipe_thickness" property="etarPipeThickness" jdbcType="DECIMAL" />
+    <result column="etar_corrosion_evaluation" property="etarCorrosionEvaluation" jdbcType="VARCHAR" />
+    <result column="etar_pipe_treatment_suggestion" property="etarPipeTreatmentSuggestion" jdbcType="VARCHAR" />
+    <result column="etar_pipe_repair_measure" property="etarPipeRepairMeasure" jdbcType="VARCHAR" />
+    <result column="etar_pipe_repair_status" property="etarPipeRepairStatus" jdbcType="VARCHAR" />
+    <result column="etar_pipe_picture_beforeclean" property="etarPipePictureBeforeclean" jdbcType="VARCHAR" />
+    <result column="etar_pipe_picture_afterclean" property="etarPipePictureAfterclean" jdbcType="VARCHAR" />
+    <result column="etar_repair_anticorrosive _structure" property="etarRepairAnticorrosiveStructure" jdbcType="VARCHAR" />
+    <result column="etar_repair_site_thickness" property="etarRepairSiteThickness" jdbcType="INTEGER" />
+    <result column="etar_repair_anticorrosive_spark_detection" property="etarRepairAnticorrosiveSparkDetection" jdbcType="VARCHAR" />
+    <result column="etar_repair_anticorrosive_picture" property="etarRepairAnticorrosivePicture" jdbcType="VARCHAR" />
+    <result column="etar_detection_date" property="etarDetectionDate" jdbcType="DATE" />
+    <result column="etar_remarks" property="etarRemarks" jdbcType="VARCHAR" />
+    <result column="etar_year" property="etarYear" jdbcType="INTEGER" />
+    <result column="etar_backup1" property="etarBackup1" jdbcType="VARCHAR" />
+    <result column="etar_backup2" property="etarBackup2" jdbcType="VARCHAR" />
+    <result column="etar_backup3" property="etarBackup3" jdbcType="VARCHAR" />
+  </resultMap>
+  <insert id="insert" parameterType="com.example.demo.entity.ExcavateTestAnticorrosionRepair" >
+    insert into excavate_test_anticorrosion_repair (id, pipe_id, etar_station, 
+      etar_defect_id, etar_relative_position, etar_longitude, 
+      etar_latitude, etar_pipe_top_buried_depth, etar_pcm_leak_detect, 
+      etar_soil_profile_description, etar_soil_resistivity, 
+      etar_soil_ph, etar_groundwater_ph, etar_groundwater_cl, 
+      etar_groundwater_so4, etar_groundwater_salt, 
+      etar_soil_corrosion_evaluation, etar_environment_ground_situation, 
+      etar_environment_soil__profile, etar_pe3_anticorrisive, 
+      etar_patch_heat_shrinkable_tape, etar_elbow_fbe, 
+      etar_damaged_area, etar_thickness, etar_spark_detection, 
+      etar_pe3_steel, etar_band_steel, etar_band_pe, 
+      etar_band_fbe, etar_fbe_cohesive_force, etar_anticorrosive_damaged_pictures, 
+      etar_pipe_corrosion_status_description, etar_corrosion_type, 
+      etar_corrosion_area, etar_corrosion_depth, 
+      etar_corrosion_rate, etar_pipe_soil_potential_dc, 
+      etar_pipe_soil_potential_ac, etar_pipe_thickness, 
+      etar_corrosion_evaluation, etar_pipe_treatment_suggestion, 
+      etar_pipe_repair_measure, etar_pipe_repair_status, 
+      etar_pipe_picture_beforeclean, etar_pipe_picture_afterclean, 
+      "etar_repair_anticorrosive _structure", etar_repair_site_thickness, 
+      etar_repair_anticorrosive_spark_detection, etar_repair_anticorrosive_picture, 
+      etar_detection_date, etar_remarks, etar_year, 
+      etar_backup1, etar_backup2, etar_backup3
+      )
+    values (#{id,jdbcType=INTEGER}, #{pipeId,jdbcType=INTEGER}, #{etarStation,jdbcType=VARCHAR}, 
+      #{etarDefectId,jdbcType=VARCHAR}, #{etarRelativePosition,jdbcType=VARCHAR}, #{etarLongitude,jdbcType=VARCHAR}, 
+      #{etarLatitude,jdbcType=VARCHAR}, #{etarPipeTopBuriedDepth,jdbcType=DECIMAL}, #{etarPcmLeakDetect,jdbcType=INTEGER}, 
+      #{etarSoilProfileDescription,jdbcType=VARCHAR}, #{etarSoilResistivity,jdbcType=DECIMAL}, 
+      #{etarSoilPh,jdbcType=DECIMAL}, #{etarGroundwaterPh,jdbcType=DECIMAL}, #{etarGroundwaterCl,jdbcType=DECIMAL}, 
+      #{etarGroundwaterSo4,jdbcType=DECIMAL}, #{etarGroundwaterSalt,jdbcType=DECIMAL}, 
+      #{etarSoilCorrosionEvaluation,jdbcType=VARCHAR}, #{etarEnvironmentGroundSituation,jdbcType=VARCHAR}, 
+      #{etarEnvironmentSoilProfile,jdbcType=VARCHAR}, #{etarPe3Anticorrisive,jdbcType=VARCHAR}, 
+      #{etarPatchHeatShrinkableTape,jdbcType=VARCHAR}, #{etarElbowFbe,jdbcType=VARCHAR}, 
+      #{etarDamagedArea,jdbcType=VARCHAR}, #{etarThickness,jdbcType=DECIMAL}, #{etarSparkDetection,jdbcType=VARCHAR}, 
+      #{etarPe3Steel,jdbcType=VARCHAR}, #{etarBandSteel,jdbcType=VARCHAR}, #{etarBandPe,jdbcType=VARCHAR}, 
+      #{etarBandFbe,jdbcType=VARCHAR}, #{etarFbeCohesiveForce,jdbcType=VARCHAR}, #{etarAnticorrosiveDamagedPictures,jdbcType=VARCHAR}, 
+      #{etarPipeCorrosionStatusDescription,jdbcType=VARCHAR}, #{etarCorrosionType,jdbcType=VARCHAR}, 
+      #{etarCorrosionArea,jdbcType=VARCHAR}, #{etarCorrosionDepth,jdbcType=VARCHAR}, 
+      #{etarCorrosionRate,jdbcType=VARCHAR}, #{etarPipeSoilPotentialDc,jdbcType=DECIMAL}, 
+      #{etarPipeSoilPotentialAc,jdbcType=DECIMAL}, #{etarPipeThickness,jdbcType=DECIMAL}, 
+      #{etarCorrosionEvaluation,jdbcType=VARCHAR}, #{etarPipeTreatmentSuggestion,jdbcType=VARCHAR}, 
+      #{etarPipeRepairMeasure,jdbcType=VARCHAR}, #{etarPipeRepairStatus,jdbcType=VARCHAR}, 
+      #{etarPipePictureBeforeclean,jdbcType=VARCHAR}, #{etarPipePictureAfterclean,jdbcType=VARCHAR}, 
+      #{etarRepairAnticorrosiveStructure,jdbcType=VARCHAR}, #{etarRepairSiteThickness,jdbcType=INTEGER}, 
+      #{etarRepairAnticorrosiveSparkDetection,jdbcType=VARCHAR}, #{etarRepairAnticorrosivePicture,jdbcType=VARCHAR}, 
+      #{etarDetectionDate,jdbcType=DATE}, #{etarRemarks,jdbcType=VARCHAR}, #{etarYear,jdbcType=INTEGER}, 
+      #{etarBackup1,jdbcType=VARCHAR}, #{etarBackup2,jdbcType=VARCHAR}, #{etarBackup3,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.demo.entity.ExcavateTestAnticorrosionRepair" >
+    insert into excavate_test_anticorrosion_repair
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="pipeId != null" >
+        pipe_id,
+      </if>
+      <if test="etarStation != null" >
+        etar_station,
+      </if>
+      <if test="etarDefectId != null" >
+        etar_defect_id,
+      </if>
+      <if test="etarRelativePosition != null" >
+        etar_relative_position,
+      </if>
+      <if test="etarLongitude != null" >
+        etar_longitude,
+      </if>
+      <if test="etarLatitude != null" >
+        etar_latitude,
+      </if>
+      <if test="etarPipeTopBuriedDepth != null" >
+        etar_pipe_top_buried_depth,
+      </if>
+      <if test="etarPcmLeakDetect != null" >
+        etar_pcm_leak_detect,
+      </if>
+      <if test="etarSoilProfileDescription != null" >
+        etar_soil_profile_description,
+      </if>
+      <if test="etarSoilResistivity != null" >
+        etar_soil_resistivity,
+      </if>
+      <if test="etarSoilPh != null" >
+        etar_soil_ph,
+      </if>
+      <if test="etarGroundwaterPh != null" >
+        etar_groundwater_ph,
+      </if>
+      <if test="etarGroundwaterCl != null" >
+        etar_groundwater_cl,
+      </if>
+      <if test="etarGroundwaterSo4 != null" >
+        etar_groundwater_so4,
+      </if>
+      <if test="etarGroundwaterSalt != null" >
+        etar_groundwater_salt,
+      </if>
+      <if test="etarSoilCorrosionEvaluation != null" >
+        etar_soil_corrosion_evaluation,
+      </if>
+      <if test="etarEnvironmentGroundSituation != null" >
+        etar_environment_ground_situation,
+      </if>
+      <if test="etarEnvironmentSoilProfile != null" >
+        etar_environment_soil__profile,
+      </if>
+      <if test="etarPe3Anticorrisive != null" >
+        etar_pe3_anticorrisive,
+      </if>
+      <if test="etarPatchHeatShrinkableTape != null" >
+        etar_patch_heat_shrinkable_tape,
+      </if>
+      <if test="etarElbowFbe != null" >
+        etar_elbow_fbe,
+      </if>
+      <if test="etarDamagedArea != null" >
+        etar_damaged_area,
+      </if>
+      <if test="etarThickness != null" >
+        etar_thickness,
+      </if>
+      <if test="etarSparkDetection != null" >
+        etar_spark_detection,
+      </if>
+      <if test="etarPe3Steel != null" >
+        etar_pe3_steel,
+      </if>
+      <if test="etarBandSteel != null" >
+        etar_band_steel,
+      </if>
+      <if test="etarBandPe != null" >
+        etar_band_pe,
+      </if>
+      <if test="etarBandFbe != null" >
+        etar_band_fbe,
+      </if>
+      <if test="etarFbeCohesiveForce != null" >
+        etar_fbe_cohesive_force,
+      </if>
+      <if test="etarAnticorrosiveDamagedPictures != null" >
+        etar_anticorrosive_damaged_pictures,
+      </if>
+      <if test="etarPipeCorrosionStatusDescription != null" >
+        etar_pipe_corrosion_status_description,
+      </if>
+      <if test="etarCorrosionType != null" >
+        etar_corrosion_type,
+      </if>
+      <if test="etarCorrosionArea != null" >
+        etar_corrosion_area,
+      </if>
+      <if test="etarCorrosionDepth != null" >
+        etar_corrosion_depth,
+      </if>
+      <if test="etarCorrosionRate != null" >
+        etar_corrosion_rate,
+      </if>
+      <if test="etarPipeSoilPotentialDc != null" >
+        etar_pipe_soil_potential_dc,
+      </if>
+      <if test="etarPipeSoilPotentialAc != null" >
+        etar_pipe_soil_potential_ac,
+      </if>
+      <if test="etarPipeThickness != null" >
+        etar_pipe_thickness,
+      </if>
+      <if test="etarCorrosionEvaluation != null" >
+        etar_corrosion_evaluation,
+      </if>
+      <if test="etarPipeTreatmentSuggestion != null" >
+        etar_pipe_treatment_suggestion,
+      </if>
+      <if test="etarPipeRepairMeasure != null" >
+        etar_pipe_repair_measure,
+      </if>
+      <if test="etarPipeRepairStatus != null" >
+        etar_pipe_repair_status,
+      </if>
+      <if test="etarPipePictureBeforeclean != null" >
+        etar_pipe_picture_beforeclean,
+      </if>
+      <if test="etarPipePictureAfterclean != null" >
+        etar_pipe_picture_afterclean,
+      </if>
+      <if test="etarRepairAnticorrosiveStructure != null" >
+        "etar_repair_anticorrosive _structure",
+      </if>
+      <if test="etarRepairSiteThickness != null" >
+        etar_repair_site_thickness,
+      </if>
+      <if test="etarRepairAnticorrosiveSparkDetection != null" >
+        etar_repair_anticorrosive_spark_detection,
+      </if>
+      <if test="etarRepairAnticorrosivePicture != null" >
+        etar_repair_anticorrosive_picture,
+      </if>
+      <if test="etarDetectionDate != null" >
+        etar_detection_date,
+      </if>
+      <if test="etarRemarks != null" >
+        etar_remarks,
+      </if>
+      <if test="etarYear != null" >
+        etar_year,
+      </if>
+      <if test="etarBackup1 != null" >
+        etar_backup1,
+      </if>
+      <if test="etarBackup2 != null" >
+        etar_backup2,
+      </if>
+      <if test="etarBackup3 != null" >
+        etar_backup3,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="pipeId != null" >
+        #{pipeId,jdbcType=INTEGER},
+      </if>
+      <if test="etarStation != null" >
+        #{etarStation,jdbcType=VARCHAR},
+      </if>
+      <if test="etarDefectId != null" >
+        #{etarDefectId,jdbcType=VARCHAR},
+      </if>
+      <if test="etarRelativePosition != null" >
+        #{etarRelativePosition,jdbcType=VARCHAR},
+      </if>
+      <if test="etarLongitude != null" >
+        #{etarLongitude,jdbcType=VARCHAR},
+      </if>
+      <if test="etarLatitude != null" >
+        #{etarLatitude,jdbcType=VARCHAR},
+      </if>
+      <if test="etarPipeTopBuriedDepth != null" >
+        #{etarPipeTopBuriedDepth,jdbcType=DECIMAL},
+      </if>
+      <if test="etarPcmLeakDetect != null" >
+        #{etarPcmLeakDetect,jdbcType=INTEGER},
+      </if>
+      <if test="etarSoilProfileDescription != null" >
+        #{etarSoilProfileDescription,jdbcType=VARCHAR},
+      </if>
+      <if test="etarSoilResistivity != null" >
+        #{etarSoilResistivity,jdbcType=DECIMAL},
+      </if>
+      <if test="etarSoilPh != null" >
+        #{etarSoilPh,jdbcType=DECIMAL},
+      </if>
+      <if test="etarGroundwaterPh != null" >
+        #{etarGroundwaterPh,jdbcType=DECIMAL},
+      </if>
+      <if test="etarGroundwaterCl != null" >
+        #{etarGroundwaterCl,jdbcType=DECIMAL},
+      </if>
+      <if test="etarGroundwaterSo4 != null" >
+        #{etarGroundwaterSo4,jdbcType=DECIMAL},
+      </if>
+      <if test="etarGroundwaterSalt != null" >
+        #{etarGroundwaterSalt,jdbcType=DECIMAL},
+      </if>
+      <if test="etarSoilCorrosionEvaluation != null" >
+        #{etarSoilCorrosionEvaluation,jdbcType=VARCHAR},
+      </if>
+      <if test="etarEnvironmentGroundSituation != null" >
+        #{etarEnvironmentGroundSituation,jdbcType=VARCHAR},
+      </if>
+      <if test="etarEnvironmentSoilProfile != null" >
+        #{etarEnvironmentSoilProfile,jdbcType=VARCHAR},
+      </if>
+      <if test="etarPe3Anticorrisive != null" >
+        #{etarPe3Anticorrisive,jdbcType=VARCHAR},
+      </if>
+      <if test="etarPatchHeatShrinkableTape != null" >
+        #{etarPatchHeatShrinkableTape,jdbcType=VARCHAR},
+      </if>
+      <if test="etarElbowFbe != null" >
+        #{etarElbowFbe,jdbcType=VARCHAR},
+      </if>
+      <if test="etarDamagedArea != null" >
+        #{etarDamagedArea,jdbcType=VARCHAR},
+      </if>
+      <if test="etarThickness != null" >
+        #{etarThickness,jdbcType=DECIMAL},
+      </if>
+      <if test="etarSparkDetection != null" >
+        #{etarSparkDetection,jdbcType=VARCHAR},
+      </if>
+      <if test="etarPe3Steel != null" >
+        #{etarPe3Steel,jdbcType=VARCHAR},
+      </if>
+      <if test="etarBandSteel != null" >
+        #{etarBandSteel,jdbcType=VARCHAR},
+      </if>
+      <if test="etarBandPe != null" >
+        #{etarBandPe,jdbcType=VARCHAR},
+      </if>
+      <if test="etarBandFbe != null" >
+        #{etarBandFbe,jdbcType=VARCHAR},
+      </if>
+      <if test="etarFbeCohesiveForce != null" >
+        #{etarFbeCohesiveForce,jdbcType=VARCHAR},
+      </if>
+      <if test="etarAnticorrosiveDamagedPictures != null" >
+        #{etarAnticorrosiveDamagedPictures,jdbcType=VARCHAR},
+      </if>
+      <if test="etarPipeCorrosionStatusDescription != null" >
+        #{etarPipeCorrosionStatusDescription,jdbcType=VARCHAR},
+      </if>
+      <if test="etarCorrosionType != null" >
+        #{etarCorrosionType,jdbcType=VARCHAR},
+      </if>
+      <if test="etarCorrosionArea != null" >
+        #{etarCorrosionArea,jdbcType=VARCHAR},
+      </if>
+      <if test="etarCorrosionDepth != null" >
+        #{etarCorrosionDepth,jdbcType=VARCHAR},
+      </if>
+      <if test="etarCorrosionRate != null" >
+        #{etarCorrosionRate,jdbcType=VARCHAR},
+      </if>
+      <if test="etarPipeSoilPotentialDc != null" >
+        #{etarPipeSoilPotentialDc,jdbcType=DECIMAL},
+      </if>
+      <if test="etarPipeSoilPotentialAc != null" >
+        #{etarPipeSoilPotentialAc,jdbcType=DECIMAL},
+      </if>
+      <if test="etarPipeThickness != null" >
+        #{etarPipeThickness,jdbcType=DECIMAL},
+      </if>
+      <if test="etarCorrosionEvaluation != null" >
+        #{etarCorrosionEvaluation,jdbcType=VARCHAR},
+      </if>
+      <if test="etarPipeTreatmentSuggestion != null" >
+        #{etarPipeTreatmentSuggestion,jdbcType=VARCHAR},
+      </if>
+      <if test="etarPipeRepairMeasure != null" >
+        #{etarPipeRepairMeasure,jdbcType=VARCHAR},
+      </if>
+      <if test="etarPipeRepairStatus != null" >
+        #{etarPipeRepairStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="etarPipePictureBeforeclean != null" >
+        #{etarPipePictureBeforeclean,jdbcType=VARCHAR},
+      </if>
+      <if test="etarPipePictureAfterclean != null" >
+        #{etarPipePictureAfterclean,jdbcType=VARCHAR},
+      </if>
+      <if test="etarRepairAnticorrosiveStructure != null" >
+        #{etarRepairAnticorrosiveStructure,jdbcType=VARCHAR},
+      </if>
+      <if test="etarRepairSiteThickness != null" >
+        #{etarRepairSiteThickness,jdbcType=INTEGER},
+      </if>
+      <if test="etarRepairAnticorrosiveSparkDetection != null" >
+        #{etarRepairAnticorrosiveSparkDetection,jdbcType=VARCHAR},
+      </if>
+      <if test="etarRepairAnticorrosivePicture != null" >
+        #{etarRepairAnticorrosivePicture,jdbcType=VARCHAR},
+      </if>
+      <if test="etarDetectionDate != null" >
+        #{etarDetectionDate,jdbcType=DATE},
+      </if>
+      <if test="etarRemarks != null" >
+        #{etarRemarks,jdbcType=VARCHAR},
+      </if>
+      <if test="etarYear != null" >
+        #{etarYear,jdbcType=INTEGER},
+      </if>
+      <if test="etarBackup1 != null" >
+        #{etarBackup1,jdbcType=VARCHAR},
+      </if>
+      <if test="etarBackup2 != null" >
+        #{etarBackup2,jdbcType=VARCHAR},
+      </if>
+      <if test="etarBackup3 != null" >
+        #{etarBackup3,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>
